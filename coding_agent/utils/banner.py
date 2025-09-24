@@ -1,4 +1,4 @@
-"""ASCII art banner and startup screen for sonph-code."""
+"""ASCII art banner and startup screen for mode."""
 
 from colorama import Fore, Style, init
 
@@ -7,24 +7,24 @@ init(autoreset=True)
 
 
 def get_ascii_banner():
-    """Get the ASCII art banner for sonph-code."""
+    """Get the ASCII art banner for mode."""
     return """
- ██████  ██████  ███    ██ ██████  ██   ██      ██████  ██████  ██████  ███████ 
-██      ██    ██ ████   ██ ██   ██ ██   ██     ██      ██    ██ ██   ██ ██      
-███████ ██    ██ ██ ██  ██ ██████  ███████     ██      ██    ██ ██   ██ █████   
-     ██ ██    ██ ██  ██ ██ ██      ██   ██     ██      ██    ██ ██   ██ ██      
-███████  ██████  ██   ████ ██      ██   ██      ██████  ██████  ██████  ███████ 
+███    ███  ██████  ██████  ███████
+████  ████ ██    ██ ██   ██ ██
+██ ████ ██ ██    ██ ██   ██ █████
+██  ██  ██ ██    ██ ██   ██ ██
+██      ██  ██████  ██████  ███████
 """
 
 
 def get_stylized_banner():
     """Get a stylized banner with block characters similar to Gemini CLI."""
     return """
-██████  ████████ ███    ██ ██████  ██   ██           ██████  ████████ ███████  ████████ 
-██      ██    ██ ████   ██ ██   ██ ██   ██          ██      ██    ██ ██       ██       
-████████ ██  ██  ██ ██  ██ ██████  ███████          ██      ██  ██   ███████  ████████ 
-      ██ ██  ██  ██  ██ ██ ██      ██   ██          ██      ██  ██        ██  ██       
-██████   ██  ██  ██   ████ ██      ██   ██           ██████  ██  ██   ███████  ████████ 
+███    ███  ██████  ██████  ███████
+████  ████ ██    ██ ██   ██ ██
+██ ████ ██ ██    ██ ██   ██ █████
+██  ██  ██ ██    ██ ██   ██ ██
+██      ██  ██████  ██████  ███████
 """
 
 
@@ -47,13 +47,13 @@ def show_startup_screen(agent_count=None, working_dir=None):
     # Create a gradient background effect
     print()
 
-    # Show the main banner with gradient colors - SONPH CODE
+    # Show the main banner with gradient colors - MODE
     banner_lines = [
-        " ████  ███  █   █ ████  █   █       ███   ███  ████  █████",
-        "█     █   █ ██  █ █   █ █   █      █     █   █ █   █ █    ",
-        " ███  █   █ █ █ █ ████  █████      █     █   █ █   █ ████ ",
-        "    █ █   █ █  ██ █     █   █      █     █   █ █   █ █    ",
-        "████   ███  █   █ █     █   █       ███   ███  ████  █████",
+        "███    ███  ██████  ██████  ███████",
+        "████  ████ ██    ██ ██   ██ ██     ",
+        "██ ████ ██ ██    ██ ██   ██ █████  ",
+        "██  ██  ██ ██    ██ ██   ██ ██     ",
+        "██      ██  ██████  ██████  ███████",
     ]
 
     colors = [Fore.CYAN, Fore.BLUE, Fore.MAGENTA, Fore.RED, Fore.YELLOW]
@@ -102,25 +102,25 @@ def show_startup_screen(agent_count=None, working_dir=None):
         + Style.BRIGHT
         + "> "
         + Fore.WHITE
-        + "Write a short paragraph about why Sonph CLI is awesome"
+        + "Write a function to calculate fibonacci numbers"
     )
     print()
     print(
         Fore.WHITE
         + Style.DIM
-        + '• I will start by searching the web for "Sonph CLI" to understand its main features and purpose. Following'
+        + '• I\'ll create a Python function to calculate fibonacci numbers using an efficient approach.'
     )
     print(
         Fore.WHITE
         + Style.DIM
-        + "  that, I'll then search for file utils in project overview. I will then consult docs/overview.md"
+        + "  First, I'll implement both iterative and recursive versions with memoization."
     )
     print(
         Fore.WHITE
         + Style.DIM
-        + "  and docs/CLI/Commands.md to gain a deeper understanding of its capabilities. Finally, I will write a short"
+        + "  Then I'll add proper documentation and type hints for better code quality."
     )
-    print(Fore.WHITE + Style.DIM + "  paragraph summarizing why Sonph CLI is awesome.")
+    print(Fore.WHITE + Style.DIM + "  Finally, I'll include some test cases to verify the implementation.")
 
     print()
     print(
@@ -129,7 +129,7 @@ def show_startup_screen(agent_count=None, working_dir=None):
         + "WebSearch "
         + Fore.WHITE
         + Style.DIM
-        + 'Searching the web for: "Sonph CLI features and purpose"'
+        + 'Creating fibonacci.py with implementation'
     )
     print()
 
@@ -141,7 +141,7 @@ def show_compact_banner():
         + Style.BRIGHT
         + "🚀 "
         + Fore.WHITE
-        + "SONPH-CODE"
+        + "MODE"
         + Fore.CYAN
-        + " - Claude Code Clone"
+        + " - AI Coding Assistant"
     )

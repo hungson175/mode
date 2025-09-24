@@ -18,6 +18,8 @@ dependencies = [
     "langchain-anthropic>=0.3.19",
     "fredapi>=0.5.2",
     "langchain-xai>=0.2.5",
+    "prompt-toolkit>=3.0.0",
+    "rich>=13.0.0",
 ]
 
 [build-system]

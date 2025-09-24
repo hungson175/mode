@@ -7,17 +7,18 @@ CORE FEATURES:
 - Add expenses with date, amount, category, and description
 - View expenses in a clean, organized list
 - Filter expenses by date range and category
-- Dashboard with spending summaries and basic analytics
+- Dashboard with spending summaries and basic analytics (using various type of charts, e.g: Pie Chart, Line Chart ...)
 - Categories: Food, Transportation, Entertainment, Shopping, Bills, Other
 - Data persistence using localStorage for this demo
 
 TECHNICAL REQUIREMENTS:
+- Use yarn, NOT npm, e.g: yarn install, yarn add, yarn create next-app , NOT: npm install, npm add or npx create-next-app
 - NextJS 14 with App Router
 - TypeScript for type safety
 - Tailwind CSS for styling with a modern, clean design
 - Responsive design that works on desktop and mobile
 - Use React hooks for state management
-- Form validation for expense inputs
+- Form validation for expense inputsa
 - Date picker for expense dates
 - Currency formatting for amounts
 
@@ -37,5 +38,7 @@ SPECIFIC FUNCTIONALITY:
 - Delete and edit existing expenses
 
 Please create this as a complete, production-ready application. Set up the project structure, implement all features, and make sure everything works together seamlessly. Focus on creating something that looks professional and that I could actually use to track my expenses.
+
+Create NEW project inside ./experiments_codes/ 
 
 When you're done, provide instructions on how to run the application and test all features.
