@@ -154,6 +154,8 @@ class RichCLI:
         """Get user input with rich autocomplete"""
         # Always try to use rich prompt first since we force TTY mode
         try:
+            # patch_stdout() ensures prompt_toolkit doesn't interfere with other output
+            # mouse_support=False allows normal terminal scrolling with mouse wheel
             with patch_stdout():
                 user_input = prompt(
                     self.get_prompt_message(),
@@ -161,7 +163,7 @@ class RichCLI:
                     complete_style=CompleteStyle.MULTI_COLUMN,
                     style=self.style,
                     complete_while_typing=True,  # This enables gray inline suggestions!
-                    mouse_support=True,
+                    mouse_support=False,  # Disabled to allow normal terminal scrolling
                 )
                 return user_input
         except (KeyboardInterrupt, EOFError):
