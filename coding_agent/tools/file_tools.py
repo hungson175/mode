@@ -123,6 +123,9 @@ def write_file(file_path: str, content: str) -> str:
             Success message or error
     """
     try:
+        # Check if file already exists
+        is_new_file = not os.path.exists(file_path)
+
         # Create directory if it doesn't exist
         dir_path = os.path.dirname(file_path)
         if dir_path:
@@ -130,6 +133,18 @@ def write_file(file_path: str, content: str) -> str:
 
         with open(file_path, "w") as f:
             f.write(content)
+
+        # Display the written content with diff_display
+        try:
+            from ..ui.diff_display import diff_display
+            diff_display.show_write_diff(
+                file_path=file_path,
+                content=content,
+                is_new_file=is_new_file
+            )
+        except ImportError:
+            pass  # Fall back to simple message if diff display not available
+
         return f"Successfully wrote to {file_path}"
     except Exception as e:
         return f"Error writing file: {str(e)}"
@@ -195,6 +210,18 @@ def edit_file(
         # Write the modified content back
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(new_content)
+
+        # Display diff using the diff_display utility
+        try:
+            from ..ui.diff_display import diff_display
+            diff_display.show_edit_diff(
+                file_path=file_path,
+                old_content=content,
+                new_content=new_content,
+                edit_description=f"Replaced {count} occurrence(s)" if replace_all or count > 1 else "Replaced 1 occurrence"
+            )
+        except ImportError:
+            pass  # Fall back to simple message if diff display not available
 
         action = (
             f"Replaced {count} occurrence(s)"
